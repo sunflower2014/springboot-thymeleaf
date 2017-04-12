@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: springboot-thymeleaf
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: jwj
+Implementation-Vendor-Id: com.sunflower
+Build-Jdk: 1.8.0_121
+Implementation-URL: http://projects.spring.io/spring-boot/springboot-t
+ hymeleaf/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
