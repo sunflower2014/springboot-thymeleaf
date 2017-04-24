@@ -1,0 +1,16 @@
+# java gitignore
+*.class
+*.jar
+*.log
+hs_err_pid*
+
+# eclipse gitignore
+bin/
+tmp/
+.settings/
+*tmp
+*.bak
+*.swp
+
+# maven gitignore
+target/
