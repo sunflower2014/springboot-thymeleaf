@@ -1,0 +1,13 @@
+target/
+.mvn/timing.properties
+.metadata
+*.tmp
+*.bak
+*.swp
+.settings/
+tmp/
+bin/
+
+*.log
+
+hs_err_pid*
