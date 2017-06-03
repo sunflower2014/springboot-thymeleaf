@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -36,11 +37,14 @@ public class FileUploadController {
 		this.storageService = storageService;
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/files")
 	public String listUploadedFiles(Model model) throws IOException {
-		model.addAttribute("files", storageService.loadAll().map(path -> MvcUriComponentsBuilder
+		model.addAttribute("files", storageService
+												.loadAll()
+												.map(path -> MvcUriComponentsBuilder
 																			.fromMethodName(FileUploadController.class, "serveFile", path.getFileName().toString())
-																			.build().toString()).collect(Collectors.toList()));
+																			.build().toString())
+												.collect(Collectors.toList()));
 		
 		return "uploadForm";
 	}
@@ -55,16 +59,20 @@ public class FileUploadController {
                 .body(file);
 	}
 	
-	@PostMapping("/")
+	@PostMapping("/files")
 	public String handleFileUpload(UploadItem uploadItem,
 								   BindingResult result,
 								   HttpServletRequest request,
 								   HttpServletResponse response,
 								   HttpSession session,
 								   RedirectAttributes redirectAttributes) {
-//		storageService.store(file);
+		System.out.println("+++++++++++++++handleFileUpload++++++++++++++");
+		System.out.println(uploadItem.getFilename());
+		for(MultipartFile multipartFile:uploadItem.getFileData()) {
+			storageService.store(multipartFile);
+		}
 		redirectAttributes.addFlashAttribute("message", "You successfully uploaded !");
-		return "redirect:/";
+		return "redirect:/files";
 	}
 	
 	@ExceptionHandler(StorageFileNotFoundException.class)
