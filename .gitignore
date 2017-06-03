@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 target/
 .mvn/timing.properties
 .metadata
@@ -11,3 +12,21 @@ bin/
 *.log
 
 hs_err_pid*
+=======
+# java gitignore
+*.class
+*.jar
+*.log
+hs_err_pid*
+
+# eclipse gitignore
+bin/
+tmp/
+.settings/
+*tmp
+*.bak
+*.swp
+
+# maven gitignore
+target/
+>>>>>>> b4543b0f0a55c95b02332f0a7ddc67d281a41df8
