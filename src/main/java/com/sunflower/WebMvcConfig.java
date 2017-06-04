@@ -9,5 +9,10 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 //	protected void addInterceptors(InterceptorRegistry registry) {
 //		registry.addInterceptor(new ThymeleafLayoutInterceptor());
 //	}
+	
+//	@Bean
+//	public DataSource dataSource() {
+//		
+//	}
 
 }
