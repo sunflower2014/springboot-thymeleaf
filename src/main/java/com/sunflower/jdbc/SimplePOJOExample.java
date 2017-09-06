@@ -14,7 +14,7 @@ public class SimplePOJOExample {
 		p.setUrl("jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8&useSSL=false");
 		p.setDriverClassName("com.mysql.jdbc.Driver");
 		p.setUsername("root");
-		p.setPassword("Dreams576");
+		p.setPassword("dreams");
 //		p.setJmxEnabled(true);
 //        p.setTestWhileIdle(false);
 //        p.setTestOnBorrow(true);

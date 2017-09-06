@@ -16,7 +16,7 @@ import com.sunflower.model.Message;
 import com.sunflower.repository.MessageRepository;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/message")
 public class MessageController {
 	private final MessageRepository messageRepository;
 	
@@ -30,10 +30,10 @@ public class MessageController {
 		return new ModelAndView("messages/list", "messages", messages);
 	}
 	
-	@GetMapping("{id}")
-	public ModelAndView view(@PathVariable("id") Message message) {
-		return new ModelAndView("messages/view", "message", message);
-	}
+//	@GetMapping("{id}")
+//	public ModelAndView view(@PathVariable("id") Message message) {
+//		return new ModelAndView("messages/view", "message", message);
+//	}
 	
 	@GetMapping(params = "form")
 	public String createForm(@ModelAttribute Message message) {
